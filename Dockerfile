@@ -1,7 +1,7 @@
-FROM node:10 AS builder
+FROM node:15 AS builder
 RUN \
-    apt-get update && apt-get upgrade -q -y && \
-    apt-get install -y ca-certificates git node-gyp make
+  apt-get update && apt-get upgrade -q -y && \
+  apt-get install -y ca-certificates git node-gyp make
 WORKDIR /root/expedition
 
 # Cache npm install

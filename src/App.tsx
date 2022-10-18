@@ -26,7 +26,8 @@ import Block from "./containers/Block";
 import Dashboard from "./containers/Dashboard";
 import NodeView from "./containers/NodeView";
 import Transaction from "./containers/Transaction";
-import { darkTheme, lightTheme } from "./themes/jadeTheme";
+// import { darkTheme, lightTheme } from "./themes/jadeTheme";
+import { darkTheme, lightTheme } from "./themes/lamina1Theme";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import NotesIcon from "@material-ui/icons/Notes";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
@@ -46,7 +47,7 @@ import {
 import { createPreserveQueryHistory } from "./helpers/createPreserveHistory";
 import BlockRawContainer from "./containers/BlockRawContainer";
 import TransactionRawContainer from "./containers/TransactionRawContainer";
-import expeditionLogo from "./expedition.png";
+import siteLogo from "./lamina1-top.png";
 import MinerStatsPage from "./containers/MinerStatsPage";
 import { IChain as Chain } from "./models/chain";
 import useChainListStore from "./stores/useChainListStore";
@@ -263,16 +264,18 @@ function App(props: any) {
                   <Grid container>
                     <Grid>
                       <img
-                        alt="expedition-logo"
+                        alt="lamina1-logo"
                         height="30"
                         style={{ marginRight: "10px" }}
-                        src={expeditionLogo}
+                        src={siteLogo}
                       />
                     </Grid>
                     <Grid>
-                      <Typography color="textSecondary" variant="h6">
-                        {t("Expedition")}
-                      </Typography>
+                      <div style={{ marginTop: 8 }}>
+                        <Typography color="textSecondary" variant="subtitle1">
+                          {t("Chain Explorer")}
+                        </Typography>
+                      </div>
                     </Grid>
                   </Grid>
                 </Link>
@@ -313,7 +316,7 @@ function App(props: any) {
                   <>
                     {query && query.rpcUrl && (
                       <Tooltip title={query.rpcUrl}>
-                        <IconButton >
+                        <IconButton>
                           <NetworkWifi />
                         </IconButton>
                       </Tooltip>
